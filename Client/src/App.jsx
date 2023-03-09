@@ -1,7 +1,12 @@
 import React from "react";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 
 const App = () => {
-  return <h1 className="text-3x1 font-bold underline">Hello from World!</h1>;
+  return (
+    <div>
+      <h1>React App</h1>
+    </div>
+  );
 };
 
 export default App;
