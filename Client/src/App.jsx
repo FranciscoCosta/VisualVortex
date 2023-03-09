@@ -19,8 +19,8 @@ const App = () => {
             alt="Vortex-logo"
             className="w-20 object-contain mr-4"
           />
-          <h2 className="ml-4">Powered By: </h2>
-          <img src={logo} alt="logo" className="w-28 object-contain" />
+          <h2 className="ml-4 mr-2">Powered By: </h2>
+          <img src={logo} alt="logo" className="w-20 object-contain" />
         </Link>
         <Link
           to="/create-post"
@@ -29,6 +29,12 @@ const App = () => {
           Create
         </Link>
       </header>
+      <main className="sm:p-8 px-4 py-8 w-full bg-[#f9fafe] min-h-[calc(100vh-73px)]">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/create-post" element={<Post />} />
+        </Routes>
+      </main>
     </BrowserRouter>
   );
 };
