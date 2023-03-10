@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { preview } from "../assets";
 import { FormField, Loader } from "../components";
 import { getRandomPrompt } from "../utils";
+import { BsInstagram, BsGithub, BsLinkedin } from "react-icons/bs";
 
 const Post = () => {
   const navigate = useNavigate();
@@ -156,6 +157,41 @@ const Post = () => {
           </button>
         </div>
       </form>
+      <div className="flex items-center justify-center gap-6 mt-8">
+        <div>
+          <BsLinkedin
+            className="w-6 h-6 bg-white flex justify-center items-center"
+            style={{ cursor: "pointer" }}
+            onClick={(e) => {
+              window.open(
+                "https://www.linkedin.com/in/francisco-costa-dev/",
+                "_blank"
+              );
+            }}
+          />
+        </div>
+        <div>
+          <BsGithub
+            className="w-6 h-6 bg-white flex justify-center items-center"
+            style={{ cursor: "pointer" }}
+            onClick={(e) => {
+              window.open("https://github.com/FranciscoCosta", "_blank");
+            }}
+          />
+        </div>
+        <div>
+          <BsInstagram
+            className="w-6 h-6 bg-white flex justify-center items-center"
+            style={{ cursor: "pointer" }}
+            onClick={(e) => {
+              window.open(
+                "https://www.instagram.com/tuga_no_brasil/",
+                "_blank"
+              );
+            }}
+          />
+        </div>
+      </div>
     </section>
   );
 };
