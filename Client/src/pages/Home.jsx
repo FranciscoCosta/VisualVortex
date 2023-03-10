@@ -52,3 +52,32 @@ const Home = () => {
 };
 
 export default Home;
+
+// if (form.prompt) {
+//   try {
+//     setGeneratingImg(true);
+//     const response = await fetch("http://localhost:8000/api/dalle", {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify({ prompt: form.prompt }),
+//     })
+//       .then((res) => res.json())
+//       .then((data) => {
+//         setForm({ ...form, photo: data.photo });
+//         setGeneratingImg(false);
+//       });
+
+//     const data = await response.json();
+
+//     setForm({ ...form, photo: `data:image/jpeg;base64,${data.photo}` });
+//   } catch (error) {
+//     console.log(error);
+//   } finally {
+//     setGeneratingImg(false);
+//   }
+// } else {
+//   alert("Por favor insira um prompt");
+// }
+// };
