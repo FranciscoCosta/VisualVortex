@@ -8,6 +8,29 @@ const RenderCards = ({ data, title }) => {
 };
 
 const Home = () => {
+  useEffect(() => {
+    const fetchPosts = async () => {
+      setLoading(true);
+      try {
+        const response = await fetch("http://localhost:8000/api/v1/post", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        if (response.ok) {
+          const data = await response.json();
+          setAllPost(data.data.reverse());
+        }
+      } catch (error) {
+        alert(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchPosts();
+  }, []);
+
   const [loading, setLoading] = useState(false);
   const [allPost, setAllPost] = useState(null);
   const [searchText, setSearchText] = useState("");
@@ -39,9 +62,12 @@ const Home = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 xs:grid-cols- 2 gap-4">
               {searchText ? (
-                <RenderCards data={[]} title="Nenhum resultado encontrado." />
+                <RenderCards
+                  data={allPost}
+                  title="Nenhum resultado encontrado."
+                />
               ) : (
-                <RenderCards data={[]} title="Nenhum post encontrado." />
+                <RenderCards data={allPost} title="Nenhum post encontrado." />
               )}
             </div>
           </>
@@ -52,32 +78,3 @@ const Home = () => {
 };
 
 export default Home;
-
-// if (form.prompt) {
-//   try {
-//     setGeneratingImg(true);
-//     const response = await fetch("http://localhost:8000/api/dalle", {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify({ prompt: form.prompt }),
-//     })
-//       .then((res) => res.json())
-//       .then((data) => {
-//         setForm({ ...form, photo: data.photo });
-//         setGeneratingImg(false);
-//       });
-
-//     const data = await response.json();
-
-//     setForm({ ...form, photo: `data:image/jpeg;base64,${data.photo}` });
-//   } catch (error) {
-//     console.log(error);
-//   } finally {
-//     setGeneratingImg(false);
-//   }
-// } else {
-//   alert("Por favor insira um prompt");
-// }
-// };

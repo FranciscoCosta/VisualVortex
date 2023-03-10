@@ -16,7 +16,32 @@ const Post = () => {
   const [generatingImg, setGeneratingImg] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const handleSumbit = () => {};
+  const handleSumbit = async (e) => {
+    e.preventDefault();
+    console.log(form.prompt, form.photo);
+    if (form.prompt && form.photo) {
+      setLoading(true);
+      try {
+        const response = await fetch("http://localhost:8000/api/v1/post", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(form),
+        });
+        await response.json();
+        console.log("Post criado com sucesso");
+        navigate("/");
+      } catch (error) {
+        alert(error);
+      } finally {
+        setLoading(false);
+      }
+    } else {
+      alert("Por favor insira um prompt e gere uma imagem.");
+    }
+  };
+
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -41,7 +66,7 @@ const Post = () => {
 
         setForm({ ...form, photo: `data:image/jpeg;base64,${data.photo}` });
       } catch (error) {
-        console.log(error);
+        alert(error.response);
       } finally {
         setGeneratingImg(false);
       }
