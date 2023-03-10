@@ -73,7 +73,7 @@ const Post = () => {
           <FormField
             label="Prompt"
             type="text"
-            name="name"
+            name="prompt"
             placeholder="A digital art illustration of a city skyline at night."
             value={form.prompt}
             handleChange={handleChange}
