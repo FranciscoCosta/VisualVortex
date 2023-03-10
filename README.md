@@ -1,10 +1,11 @@
-<h1>ReadMe para o projeto VisualVortex:</h1>
+<h1>VisualVortex:</h1>
 <p>Este é um projeto full stack que utiliza inteligência artificial OpenAI para gerar imagens incríveis. A aplicação consiste em uma galeria de imagens geradas pela comunidade e uma página de postagem que permite que os usuários criem suas próprias imagens com um prompt ou solicitem sugestões da aplicação.</p>
 <h2>Tecnologias utilizadas:</h2>
 <ul>
   <li><strong>MongoDB:</strong> banco de dados NoSQL orientado a documentos que permite armazenar dados em formato JSON;</li>
   <li><strong>Express.js:</strong> framework web para o Node.js, que permite criar APIs de forma simples e rápida;</li>
   <li><strong>React.js:</strong> biblioteca de interface do usuário que nos permite criar interfaces de usuário dinâmicas e reativas;</li>
+  <li><strong>Tailwindcss:</strong> biblioteca de CSS altamente personalizável e escalável, que permite criar interfaces de usuário modernas e estilizadas com facilidade e eficiência.</li>
   <li><strong>Node.js:</strong> plataforma de execução de código JavaScript no servidor, permitindo que os desenvolvedores criem aplicativos de rede escaláveis e de alta performance;</li>
   <li><strong>React Router:</strong> biblioteca para lidar com as rotas da aplicação e permitir a navegação entre as diferentes páginas;</li>
   <li><strong>OpenAI:</strong> plataforma de inteligência artificial utilizada para gerar as imagens da aplicação.</li>
