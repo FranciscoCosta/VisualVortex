@@ -62,7 +62,7 @@ const Home = () => {
     <section className="max-w-7x1 mx-auto">
       <div>
         <h1 className="font-extrabold text-[#222328] text-[32px]">
-          Galeria da Comunidadade:
+          Galeria da Comunidade:
         </h1>
         <p className="mt-2 text-[#66e75] text-[16px] max-w[500px]">
           Navega por esta colecção de imagens únicas geradas pela DALL-E AI
