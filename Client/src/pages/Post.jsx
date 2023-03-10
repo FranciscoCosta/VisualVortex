@@ -106,7 +106,7 @@ const Post = () => {
             label="Prompt"
             type="text"
             name="prompt"
-            placeholder="A digital art illustration of a city skyline at night."
+            placeholder="Desenho em estilo de desenho animado de uma girafa em uma savana."
             value={form.prompt}
             handleChange={handleChange}
             isSurpriseMe
