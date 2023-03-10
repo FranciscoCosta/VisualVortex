@@ -61,7 +61,7 @@ const Home = () => {
           Galeria da Comunidadade:
         </h1>
         <p className="mt-2 text-[#66e75] text-[16px] max-w[500px]">
-          Navega pela colecção de imagens únicas geradas pela DALL-E AI
+          Navega por esta colecção de imagens únicas geradas pela DALL-E AI
         </p>
       </div>
       <div className="mt-16">
